@@ -18,12 +18,7 @@ This is my resume in the cloud -- my entry into the  [#CloudResumeChallenge](htt
 
 I have had some experience with nearly every aspect of this challenge. I have some experience with Javascript, but not much. The only thing that is completely new is IaC. This is why I have decided to 'raise the bar' by adding additional funcitonality to the web application.
 
-I am really worried about accidentally committing an AWS secret to this repository. I have enabled [Git Guardian](https://dashboard.gitguardian.com/) on this repository as a prophylactic. I configured the pre-commit, pre-push, and pre-receive hooks to scan for secrets at commit, push, and before sending to Github. This may be overkill, but hey, it is my credit card on the line. 
-
-Add in a fake key to test if this whole GitGuardian thing works:
-
-EwOxdTbICGp0Ljnckp7c3qPpoxVA2xqFApo3F7Rx
-
+I am really worried about accidentally committing an AWS secret to this repository. I have enabled [Git Guardian](https://dashboard.gitguardian.com/) on this repository as a prophylactic. I configured the pre-commit, pre-push, and pre-receive hooks to scan for secrets at commit, push, and before sending to Github. This may be overkill, but hey, it is my credit card on the line.
 
 
 

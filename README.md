@@ -20,6 +20,8 @@ I have had some experience with nearly every aspect of this challenge. I have so
 
 I am really worried about accidentally committing an AWS secret to this repository. I have enabled [Git Guardian](https://dashboard.gitguardian.com/) on this repository as a prophylactic. I configured the pre-commit, pre-push, and pre-receive hooks to scan for secrets at commit, push, and before sending to Github. This may be overkill, but hey, it is my credit card on the line.
 
+I need to figure out a way to check that it is working, adding an old secret to the README did not seem to work?!?
+
 
 
 

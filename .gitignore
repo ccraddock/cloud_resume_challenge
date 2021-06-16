@@ -1,1 +1,5 @@
 .cache_ggshield
+.terraform
+.tfplan
+out.tfplan
+.terraform.lock.hcl

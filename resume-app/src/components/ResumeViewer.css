@@ -1,0 +1,244 @@
+.resume-container {
+  width: 100%;
+  min-height: 600px;
+}
+
+.resume-container.loading,
+.resume-container.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e0e0e0;
+  border-top-color: #d4af37;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.resume-container.loading p {
+  color: #555555;
+  font-size: 1rem;
+}
+
+.resume-container.error {
+  text-align: center;
+  color: #cc0000;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.resume-container.error h2 {
+  color: #cc0000;
+  margin-bottom: 0.5rem;
+}
+
+.resume-container.error p {
+  color: #ff6666;
+  margin-bottom: 1.5rem;
+}
+
+.resume-container.error button {
+  padding: 0.75rem 1.5rem;
+  background: #d4af37;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.resume-container.error button:hover {
+  background: #b8941f;
+}
+
+/* Resume Content Styling */
+.resume-content {
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Highlight section headers */
+.resume-content h2.section-header {
+  color: #ffffff;
+  background: linear-gradient(90deg, #d4af37 0%, #b8941f 100%);
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.resume-content h2 {
+  color: #000000;
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.resume-content h3 {
+  color: #333333;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-content h4,
+.resume-content h5,
+.resume-content h6 {
+  color: #333333;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-content p {
+  margin-bottom: 0.75rem;
+  color: #333333;
+}
+
+.resume-content ul,
+.resume-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-content li {
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+.resume-content a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.resume-content a:hover {
+  color: #b8941f;
+  text-decoration: underline;
+}
+
+.resume-content strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+.resume-content em {
+  color: #333333;
+}
+
+.resume-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.resume-content th,
+.resume-content td {
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.resume-content th {
+  background: #fffaeb;
+  color: #000000;
+  font-weight: 600;
+  border-bottom: 2px solid #d4af37;
+}
+
+.resume-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border: 1px solid #e0e0e0;
+}
+
+.job-block {
+  margin-bottom: 2rem;
+}
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.job-company, .job-position {
+  font-weight: bold;
+}
+.job-dates {
+  font-size: 0.95em;
+  color: #666;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+.job-summary {
+  margin-bottom: 0.25rem;
+}
+.job-highlights {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+}
+.open-science-list, .awards-list {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+.open-science-title, .award-title {
+  font-weight: 600;
+}
+.section-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.resume-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.resume-summary {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .resume-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .resume-content h2 {
+    font-size: 1.25rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .resume-content {
+    font-size: 0.95rem;
+  }
+}
+
+/* e.g. in App.css or your main content CSS */
+.main-content {
+  margin-top: 110px; /* adjust to match header height */
+}

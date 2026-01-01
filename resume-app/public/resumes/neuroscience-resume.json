@@ -1,0 +1,125 @@
+{
+  "title": "Machine Learning Engineer",
+  "summary": "Senior machine learning engineer and research leader with experience productizing on-device ML, building cloud training pipelines, running A/B studies, and leading interdisciplinary teams in neurotechnology and healthcare.",
+  "jobs": [
+    {
+      "company": "Meta Platforms Inc",
+      "position": "Staff Machine Learning Engineer (IC6)",
+      "location": "Remote",
+      "startDate": "2022-08-01",
+      "endDate": "Present",
+      "summary": "Tech Lead on a team productizing AI algorithms for a low-power EMG-based Brain-Computer Interface (Meta Neural Band).",
+      "highlights": [
+        "Implemented on-device inference on 16-bit NPUs with performance parity to floating-point models.",
+        "Designed, evaluated, and implemented architecture and training features to optimize accuracy and system performance for three EMG time-course gesture decoder models (CNN, LSTM).",
+        "Resolved model NPU incompatibilities by replacing unsupported components with functional equivalents.",
+        "Implemented PyTorch training and evaluation pipelines running on multi-GPU cloud infrastructure.",
+        "Executed biweekly model release process from branch cut to firmware packaging and helped implement a push-on-green pipeline to fully automate releases.",
+        "Designed and executed A/B user studies to measure on-device model performance using power analyses to maximize study efficiency.",
+        "Implemented data quality assessment, control, labeling pipelines, and monitoring dashboards.",
+        "Refactored multi-sensor fusion feature pipeline to achieve a 10x improvement in temporal alignment.",
+        "Implemented numerically accurate, power-optimized preprocessing using DSP techniques.",
+        "Led cross-organizational effort to build an automated high-resolution power measurement system with dashboards for monitoring inference pipeline performance.",
+        "Led development of tools to estimate PyTorch model performance (power/latency) on various NPU configurations, enabling power- and latency-informed Neural Architecture Search (NAS)."
+      ]
+    },
+    {
+      "company": "Indeed",
+      "position": "Research Engineering Manager",
+      "location": "Austin, Texas",
+      "startDate": "2021-08-01",
+      "endDate": "2022-08-01",
+      "summary": "Tech Lead/Manager supporting a team to optimize job posting placement and improve product recommendation systems.",
+      "highlights": [
+        "Managed and supported six engineers working on Career Guide optimization.",
+        "Designed a bag-of-words based clustering system for organizing articles into subgroups to pool statistics and interpolate reader profiles for new articles."
+      ]
+    },
+    {
+      "company": "The University of Texas at Austin, Dell Medical School",
+      "position": "Associate Professor of Diagnostic Medicine (Radiology)",
+      "location": "Austin, Texas",
+      "startDate": "2017-09-01",
+      "endDate": "2021-07-01",
+      "summary": "Led federally funded research developing AI algorithms to predict diagnosis, prognosis, and treatment outcomes from neuroimaging and multimodal data.",
+      "highlights": [
+        "Managed a grant-supported research agenda applying AI to neuroimaging for neuropsychiatric conditions.",
+        "Led development of a mobile app for behavioral and questionnaire data collection to measure environmental impacts on mental health.",
+        "Developed fMRI-based brain–computer interfaces for network modulation and neurofeedback research.",
+        "Created C-PAC, an open-source neuroimaging pipeline for high-throughput image processing on cloud and HPC systems.",
+        "Collaborated to optimize MR imaging protocols for multi-modal brain characterization, pancreas quantification, and whole-body fat quantification.",
+        "Built cloud-based neuroimaging AI pipelines for rapid clinical assessment support.",
+        "Designed and executed large-scale longitudinal data collection efforts with whole-body imaging and neuropsychiatric assessment."
+      ]
+    },
+    {
+      "company": "Nathan S. Kline Institute for Psychiatric Research / Child Mind Institute",
+      "position": "Director, Computational Neuroimaging Lab & Director of Imaging",
+      "location": "Orangeburg, NY",
+      "startDate": "2012-06-01",
+      "endDate": "2017-08-01",
+      "summary": "Managed software engineering and data science teams to develop MRI acquisition, processing, and data-sharing infrastructure for large-scale neuroimaging studies.",
+      "highlights": [
+        "Managed a neuroimaging data collection infrastructure that collected and openly shared hundreds of MRI scans per month (Healthy Brain Network participation).",
+        "Optimized MRI sequences for functional, structural, molecular, and abdominal imaging in collaboration with Siemens research scientists.",
+        "Monitored image quality and worked with service engineers to resolve issues.",
+        "Built PACS for image collection, transfer to long-term storage, and radiological reads.",
+        "Directly oversaw operations of a Siemens 1.5T Avanto mobile MRI, including operator training, procedures, and safety protocols.",
+        "Established and managed image acquisition on Siemens 3T Tim Trio systems at partner sites.",
+        "Coordinated radiological reads and operational workflows."
+      ]
+    }
+  ],
+"openScienceProjects": [
+    {
+      "name": "C-PAC: The Configurable Pipeline for the Analysis of Connectomes",
+      "url": "https://fcp-indi.github.io/C-PAC/",
+      "description": "An open-source, automated, and configurable pipeline for processing and analyzing large-scale neuroimaging datasets, built to facilitate reproducible research in connectomics."
+    },
+    {
+      "name": "Brainhack",
+      "url": "https://brainhack.org",
+      "description": "Co-founder of Brainhack, an open science organization that organizes hackathons to facilitate interdisciplinary collaborative approaches to neuroscience; over 150 events held since 2012."
+    },
+    {
+      "name": "Preprocessed Connectomes Project (PCP)",
+      "url": "",
+      "description": "Founded the Preprocessed Connectomes Project to enable sharing of preprocessed neuroimaging data and accelerate reproducible analyses across the community."
+    },
+    {
+      "name": "Organization for Human Brain Mapping — Open Science SIG (Founding Chair)",
+      "url": "https://www.humanbrainmapping.org",
+      "description": "Founding Chair of the OHBM Open Science Special Interest Group (2016), helping establish community standards and resources for open neuroimaging."
+    },
+    {
+      "name": "Organization for Human Brain Mapping — Education Chair",
+      "url": "https://www.humanbrainmapping.org",
+      "description": "Served as Education Chair for OHBM (2017–2019), organizing training, workshops, and community education initiatives."
+    }
+
+],
+"grantsAwardsAndPublications": {
+    "publications": "Author on over 98 peer-reviewed scientific publications and a patent (h-index: 58, i10-index: 98).",
+    "invitedSpeaker": "Invited speaker at over 35 conferences, workshops, and symposia including SXSW (2016 & 2017).",
+    "awards": [
+      {
+        "year": 2021,
+        "title": "Organization for Human Brain Mapping Open Science Award",
+        "description": "Open Science Award (cash prize).",
+        "amount": "$2,500"
+      },
+      {
+        "year": 2014,
+        "title": "NIMH Biobehavioral Research Award for Innovative New Researchers",
+        "description": "Research grant supporting neuroimaging research.",
+        "amount": "$2,600,000"
+      },
+      {
+        "year": 2010,
+        "title": "NARSAD Young Investigator Grant",
+        "description": "Research grant supporting early-career investigators.",
+        "amount": "$75,000"
+      }
+    ]
+  }
+}

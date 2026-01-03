@@ -1,5 +1,6 @@
 {
   "title": "Machine Learning Engineer",
+  "pdf": "ccraddock_mle_20250926.pdf",
   "summary": "Machine Learning Engineer with extensive experience optimizing inference pipelines for execution on low-power edge devices. Seeking a senior technical leadership position developing the technology behind ubiquitous computing agents of the future.",
   "jobs": [
     {
@@ -20,7 +21,7 @@
         "Refactored multi-sensor fusion feature pipeline to achieve a 10x improvement in temporal alignment.",
         "Implemented numerically accurate, power-optimized preprocessing using DSP techniques.",
         "Led cross-organizational development of an automated high-resolution power measurement system with dashboards for monitoring inference pipeline performance and mitigating regressions.",
-        "Led development of tools to estimate PyTorch model performance (power/latency) on various NPU configurations, enabling power- and latency-informed Neural Architecture Search (NAS)."
+        "Lead the development of tools to profile inference pipeline performance (power/latency) on various NPU configurations, enabling power and latency -informed Neural Architecture Search (NAS)."
       ]
     },
     {

@@ -33,6 +33,14 @@
   background: #f5f1e8;
 }
 
+.sidebar {
+  margin-top: 110px; /* Adjust to match header height */
+}
+
+.main-content {
+  margin-top: 110px; /* Adjust to match header height */
+}
+
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;

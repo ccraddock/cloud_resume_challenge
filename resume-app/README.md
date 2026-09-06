@@ -1,110 +1,60 @@
 # Cameron Craddock Resume Viewer
 
-A modern React.js web application that fetches and displays a resume from a published Google Doc with a fresh, responsive design.
+A responsive React/Vite résumé site for Cameron Craddock. The site renders versioned résumé data from local JSON files and provides a direct link to the corresponding PDF when available.
 
-## Features
+## Development
 
-- ✅ Fetches resume content from Google Docs
-- ✅ Modern, responsive dark theme layout
-- ✅ Sidebar with quick info, tech skills, and education
-- ✅ Sanitized HTML rendering (security)
-- ✅ Loading and error states
-- ✅ Unit tests with full coverage
-- ✅ Mobile-friendly design
-
-## Installation
+Requires Node.js 18 or newer.
 
 ```bash
-cd /home/ccraddock/experiments/cloud_resume_challenge/resume-app
+cd resume-app
 npm install
+npm run dev
 ```
 
-## Running the App
+The development server binds to `127.0.0.1:3000` by default.
+
+## Production build
 
 ```bash
-npm start
+npm run build
 ```
 
-The app will open at `http://localhost:3000` in your default browser.
+Vite writes the production site to `resume-app/dist/`.
 
-## Running Tests
+From the repository root, `make deploy` builds the React app and syncs `resume-app/dist/` to the private S3 origin used by CloudFront.
 
-```bash
-npm test
-```
+## Security notes
 
-All unit tests will run in watch mode. Press `q` to quit.
+- The site does not render raw HTML or use `dangerouslySetInnerHTML`.
+- External résumé links are restricted to HTTP/HTTPS URLs and open with `noopener noreferrer`.
+- PDF paths are restricted to local files under `/resumes/`.
+- The Vite development server is bound to localhost with strict filesystem access.
+- The S3 bucket is private and CloudFront is limited to read-only HTTP methods.
+- Runtime dependencies are intentionally minimal: React and React DOM only.
 
-## Building for Production
+## Main structure
 
-```bash
-npm build
-```
-
-This creates an optimized production build in the `build` folder.
-
-## Project Structure
-
-```
+```text
 resume-app/
-├── public/
-│   └── index.html
+├── public/resumes/       # résumé JSON and PDFs
+├── scripts/              # optional résumé parsing utility
 ├── src/
 │   ├── components/
-│   │   ├── Header.js
-│   │   ├── Header.css
-│   │   ├── Header.test.js
-│   │   ├── Sidebar.js
-│   │   ├── Sidebar.css
-│   │   ├── Sidebar.test.js
-│   │   ├── ResumeViewer.js
-│   │   ├── ResumeViewer.css
-│   │   └── ResumeViewer.test.js
-│   ├── App.js
-│   ├── App.css
-│   ├── App.test.js
-│   ├── index.js
-│   ├── index.css
-│   └── setupTests.js
+│   │   ├── Header.jsx
+│   │   ├── Sidebar.jsx
+│   │   └── ResumeViewer.jsx
+│   ├── App.jsx
+│   └── index.jsx
+├── index.html
 ├── package.json
-└── README.md
+└── vite.config.js
 ```
 
-## Technologies
+## Résumé variants
 
-- React 18.2.0
-- DOMPurify (HTML sanitization)
-- CSS3 (Grid, Flexbox, Gradients)
-- React Testing Library
-- Jest
+The selector currently exposes:
 
-## Features Breakdown
-
-### ResumeViewer Component
-- Fetches resume from published Google Doc URL
-- Sanitizes HTML for security
-- Shows loading state while fetching
-- Displays error messages if fetch fails
-- Responsive typography and spacing
-
-### Header Component
-- Displays name and professional subtitle
-- Quick navigation links (Email, LinkedIn, GitHub)
-- Sticky position with glassmorphism styling
-
-### Sidebar Component
-- Quick contact info
-- Tech skills with hover effects
-- Education timeline
-- Sticky positioning on desktop
-
-## Known Limitations
-
-If your Google Doc is behind CORS restrictions, you may need to use a proxy service. The app will show an error message in that case.
-
-## Browser Support
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Machine Learning Engineer — 2026
+- Machine Learning Engineer — 2025
+- Biomedical Imaging AI Researcher

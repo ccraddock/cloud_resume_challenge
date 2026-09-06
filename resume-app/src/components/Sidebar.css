@@ -1,125 +1,134 @@
 .sidebar {
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  height: fit-content;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  align-self: start;
   position: sticky;
-  top: 2rem;
+  top: 112px;
+  color: #34322d;
+  padding: 0.35rem 0;
 }
 
 .sidebar-section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.1rem;
 }
 
 .sidebar-section:last-child {
   margin-bottom: 0;
 }
 
-.sidebar h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 1rem;
+.sidebar h2 {
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid #c7aa58;
+  color: #282620;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid #d4af37;
-  padding-bottom: 0.75rem;
 }
 
-.links-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-}
-
-.sidebar-link {
-  display: inline-block;
-  color: #000000;
-  text-decoration: none;
-  padding: 0.75rem 1rem;
-  background: #ffffff;
-  border-radius: 6px;
-  border: 2px solid #d4af37;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: center;
-}
-
-.sidebar-link:hover {
-  color: #ffffff;
-  background: #d4af37;
-  border-color: #d4af37;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-.info-item {
-  font-size: 0.9rem;
-  color: #333333;
-  margin-bottom: 0.75rem;
-}
-
-.label {
-  font-weight: 600;
-  color: #000000;
-}
-
-.skills-grid {
+.contact-list,
+.profile-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
 }
 
-.skill-tag {
-  background: #fffaeb;
-  color: #000000;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  border: 1px solid #d4af37;
-  transition: all 0.3s ease;
+.contact-list a,
+.sidebar-link {
+  width: fit-content;
+  max-width: 100%;
+  color: #444036;
+  text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
-.skill-tag:hover {
-  background: #d4af37;
-  color: #ffffff;
-  border-color: #d4af37;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+.contact-list a:hover,
+.sidebar-link:hover {
+  color: #8a6919;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.contact-list a:focus-visible,
+.sidebar-link:focus-visible {
+  outline: 3px solid rgba(184, 146, 46, 0.3);
+  outline-offset: 2px;
+}
+
+.profile-links .sidebar-link::after {
+  content: " ↗";
+  color: #9b9588;
+  font-size: 0.75em;
 }
 
 .edu-item {
-  margin-bottom: 1.25rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
 }
 
-.edu-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.edu-item h4 {
+.edu-item h3 {
+  margin: 0 0 0.35rem;
+  color: #292722;
   font-size: 0.9rem;
-  color: #000000;
-  margin-bottom: 0.25rem;
+  line-height: 1.35;
+  font-weight: 700;
 }
 
 .edu-item p {
-  font-size: 0.85rem;
-  color: #555555;
+  margin: 0;
+  color: #555046;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
-@media (max-width: 768px) {
+.edu-item span {
+  display: block;
+  margin-top: 0.16rem;
+  color: #857e70;
+  font-size: 0.76rem;
+}
+
+.edu-item.compact {
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2ddd1;
+}
+
+@media (max-width: 900px) {
   .sidebar {
     position: static;
-    top: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #e0dbcf;
+    background: rgba(255, 254, 251, 0.72);
   }
 
-  .links-grid {
+  .sidebar-section {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
     grid-template-columns: 1fr 1fr;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .education-section {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 440px) {
+  .sidebar {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .education-section {
+    grid-column: auto;
   }
 }

@@ -1,37 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import ResumeViewer from './components/ResumeViewer';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
+import ResumeViewer from './components/ResumeViewer';
 import Sidebar from './components/Sidebar';
 import './App.css';
 
+const RESUME_URL = '/resumes/ml-resume-2026.json';
+const EXPERIENCE_HEADING = 'Professional Experience — Recent 10 Years of a 26-Year Career';
+
 function App() {
-  const [selectedResume, setSelectedResume] = useState('ml');
   const [pdf, setPdf] = useState('');
 
-  const resumeFiles = {
-    ml: '/resumes/ml-resume.json',
-    neuroscience: '/resumes/neuroscience-resume.json',
-  };
-
-  // Fetch the PDF filename from the selected resume JSON
   useEffect(() => {
-    fetch(resumeFiles[selectedResume])
-      .then((r) => r.json())
-      .then((data) => setPdf(data.pdf || ''))
-      .catch(() => setPdf(''));
-  }, [selectedResume]);
+    let active = true;
+
+    fetch(RESUME_URL, { credentials: 'same-origin' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Unable to load resume metadata (${response.status})`);
+        return response.json();
+      })
+      .then((data) => {
+        if (active) setPdf(typeof data.pdf === 'string' ? data.pdf : '');
+      })
+      .catch(() => {
+        if (active) setPdf('');
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <div className="app">
-      <Header selectedResume={selectedResume} onResumeChange={setSelectedResume} pdf={pdf} />
-      <div className="container">
+      <Header pdf={pdf} />
+
+      <div className="page-shell">
         <Sidebar />
-        <main className="main-content">
-          <ResumeViewer url={resumeFiles[selectedResume]} key={selectedResume} />
+        <main className="main-content" id="resume">
+          <ResumeViewer
+            url={RESUME_URL}
+            experienceHeading={EXPERIENCE_HEADING}
+          />
         </main>
       </div>
+
       <footer className="footer">
-        <p>&copy; 2025 Cameron Craddock | Resume powered by React</p>
+        <span>© 2026 Cameron Craddock</span>
+        <span className="footer-separator" aria-hidden="true">·</span>
+        <span>Austin, Texas</span>
       </footer>
     </div>
   );

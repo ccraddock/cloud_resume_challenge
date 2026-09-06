@@ -9,30 +9,6 @@
   font-family: var(--font-body);
 }
 
-.app[data-font-theme="humanist"] {
-  --font-body: Ubuntu, Cantarell, "Trebuchet MS", sans-serif;
-  --font-display: Ubuntu, Cantarell, "Trebuchet MS", sans-serif;
-  --font-label: Ubuntu, Cantarell, "Trebuchet MS", sans-serif;
-}
-
-.app[data-font-theme="editorial"] {
-  --font-body: "Liberation Sans", Arial, Helvetica, sans-serif;
-  --font-display: "Liberation Serif", Georgia, "Times New Roman", serif;
-  --font-label: "Liberation Sans", Arial, Helvetica, sans-serif;
-}
-
-.app[data-font-theme="classic"] {
-  --font-body: "DejaVu Serif", Georgia, "Times New Roman", serif;
-  --font-display: "DejaVu Serif", Baskerville, Georgia, "Times New Roman", serif;
-  --font-label: "DejaVu Sans", system-ui, sans-serif;
-}
-
-.app[data-font-theme="technical"] {
-  --font-body: "DejaVu Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: "DejaVu Sans Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-label: "DejaVu Sans Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
 .page-shell {
   width: min(1120px, calc(100% - 3rem));
   margin: 0 auto;

@@ -164,5 +164,3 @@ export default function ResumeViewer({ url }) {
     </div>
   );
 }
-
-export default ResumeViewer;

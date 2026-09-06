@@ -1,244 +1,333 @@
 .resume-container {
   width: 100%;
-  min-height: 600px;
 }
 
 .resume-container.loading,
 .resume-container.error {
+  min-height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  text-align: center;
+  color: #5c574e;
 }
 
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #e0e0e0;
-  border-top-color: #d4af37;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 1rem;
+  border: 3px solid #e6e0d3;
+  border-top-color: #a47d20;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
-  margin-bottom: 1rem;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.resume-container.loading p {
-  color: #555555;
-  font-size: 1rem;
-}
-
-.resume-container.error {
-  text-align: center;
-  color: #cc0000;
-}
-
-.error-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  to { transform: rotate(360deg); }
 }
 
 .resume-container.error h2 {
-  color: #cc0000;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
+  color: #2b2924;
+  font-family: var(--font-display);
 }
 
 .resume-container.error p {
-  color: #ff6666;
-  margin-bottom: 1.5rem;
+  max-width: 430px;
+  margin-bottom: 1.1rem;
+  color: #6b655b;
 }
 
 .resume-container.error button {
-  padding: 0.75rem 1.5rem;
-  background: #d4af37;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #2c2b28;
+  border-radius: 4px;
+  background: #2c2b28;
+  color: #fff;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
 }
 
-.resume-container.error button:hover {
-  background: #b8941f;
-}
-
-/* Resume Content Styling */
 .resume-content {
-  color: #000000;
-  line-height: 1.6;
+  max-width: 780px;
+  margin: 0 auto;
+  color: #35322c;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.67;
 }
 
-/* Highlight section headers */
-.resume-content h2.section-header {
-  color: #ffffff;
-  background: linear-gradient(90deg, #d4af37 0%, #b8941f 100%);
-  font-size: 1.5rem;
-  margin-top: 1.25rem;
-  margin-bottom: 0.75rem;
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
+.resume-intro {
+  padding-bottom: 1.7rem;
+}
+
+.resume-eyebrow {
+  margin-bottom: 0.35rem;
+  color: #9a7520;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.resume-title {
+  margin: 0;
+  color: #1d1c19;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  line-height: 1.08;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: -0.025em;
 }
 
-.resume-content h2 {
-  color: #000000;
-  font-size: 1.5rem;
-  margin-top: 1.25rem;
-  margin-bottom: 0.75rem;
+.resume-summary {
+  max-width: 720px;
+  margin: 0.9rem 0 0;
+  color: #514d45;
+  font-size: 1.04rem;
+  line-height: 1.65;
 }
 
-.resume-content h3 {
-  color: #333333;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+.resume-section {
+  margin-top: 2.45rem;
 }
 
-.resume-content h4,
-.resume-content h5,
-.resume-content h6 {
-  color: #333333;
-  margin-top: 0.75rem;
-  margin-bottom: 0.5rem;
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0 0 1.2rem;
+  color: #27251f;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
-.resume-content p {
-  margin-bottom: 0.75rem;
-  color: #333333;
+.section-header::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #c4a24d;
 }
 
-.resume-content ul,
-.resume-content ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+.technical-skills {
+  display: grid;
+  gap: 0.82rem;
 }
 
-.resume-content li {
-  margin-bottom: 0.5rem;
-  color: #333333;
+.technical-skill-group {
+  display: grid;
+  grid-template-columns: minmax(155px, 0.28fr) 1fr;
+  gap: 1rem;
+  align-items: baseline;
 }
 
-.resume-content a {
-  color: #d4af37;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
+.technical-skill-group h3 {
+  margin: 0;
+  color: #292722;
+  font-size: 0.87rem;
+  line-height: 1.45;
+  font-weight: 700;
 }
 
-.resume-content a:hover {
-  color: #b8941f;
-  text-decoration: underline;
+.technical-skill-group p {
+  margin: 0;
+  color: #59544b;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
-.resume-content strong {
-  color: #000000;
-  font-weight: 600;
-}
-
-.resume-content em {
-  color: #333333;
-}
-
-.resume-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-.resume-content th,
-.resume-content td {
-  border: 1px solid #e0e0e0;
-  padding: 0.75rem;
-  text-align: left;
-}
-
-.resume-content th {
-  background: #fffaeb;
-  color: #000000;
-  font-weight: 600;
-  border-bottom: 2px solid #d4af37;
-}
-
-.resume-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin: 1rem 0;
-  border: 1px solid #e0e0e0;
+.jobs-list {
+  display: grid;
 }
 
 .job-block {
-  margin-bottom: 2rem;
+  padding: 0 0 2rem;
 }
-.job-header {
+
+.job-block + .job-block {
+  padding-top: 2rem;
+  border-top: 1px solid #e6e1d6;
+}
+
+.job-topline {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.job-company, .job-position {
-  font-weight: bold;
-}
-.job-dates {
-  font-size: 0.95em;
-  color: #666;
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-.job-summary {
-  margin-bottom: 0.25rem;
-}
-.job-highlights {
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
-}
-.open-science-list, .awards-list {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
-.open-science-title, .award-title {
-  font-weight: 600;
-}
-.section-header {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.resume-title {
-  font-size: 2rem;
+
+.job-company {
+  margin: 0;
+  color: #1f1e1a;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  line-height: 1.3;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-.resume-summary {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .resume-content h1 {
-    font-size: 1.5rem;
-  }
+.job-dates {
+  flex: 0 0 auto;
+  color: #777064;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
 
-  .resume-content h2 {
-    font-size: 1.25rem;
-    padding: 0.5rem 0.75rem;
-  }
+.job-role-line {
+  margin-top: 0.2rem;
+  color: #514c43;
+  font-size: 0.9rem;
+}
 
+.job-position {
+  color: #35322c;
+  font-weight: 700;
+}
+
+.job-location {
+  color: #777064;
+}
+
+.job-summary {
+  margin: 0.75rem 0 0.65rem;
+  color: #5a554c;
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.job-highlights {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.job-highlights li {
+  margin-bottom: 0.62rem;
+  padding-left: 0.18rem;
+  color: #3d3932;
+}
+
+.job-highlights li::marker {
+  color: #a68025;
+}
+
+.metric {
+  color: #795b13;
+  font-weight: 750;
+}
+
+.open-science-list,
+.awards-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.open-science-list {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.open-science-list li {
+  color: #555046;
+}
+
+.open-science-title {
+  color: #292722;
+  font-weight: 700;
+}
+
+.resume-content a {
+  color: #735713;
+  text-decoration-color: #d2bd82;
+  text-underline-offset: 0.18em;
+}
+
+.resume-content a:hover {
+  color: #9a7520;
+  text-decoration-color: currentColor;
+}
+
+.resume-content a:focus-visible {
+  outline: 3px solid rgba(184, 146, 46, 0.3);
+  outline-offset: 2px;
+}
+
+.grants-pubs > p {
+  margin: 0 0 0.65rem;
+  color: #514c43;
+}
+
+.awards-list {
+  margin-top: 1rem;
+  border-top: 1px solid #e6e1d6;
+}
+
+.awards-list li {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  column-gap: 0.7rem;
+  row-gap: 0.1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee9df;
+}
+
+.award-year {
+  color: #8c6c20;
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.award-title {
+  color: #35322c;
+  font-weight: 650;
+}
+
+.award-amount {
+  color: #777064;
+  font-family: var(--font-label);
+  font-size: 0.83rem;
+  white-space: nowrap;
+}
+
+.award-desc {
+  grid-column: 2 / -1;
+  color: #6b655b;
+  font-size: 0.84rem;
+}
+
+@media (max-width: 680px) {
   .resume-content {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
   }
-}
 
-/* e.g. in App.css or your main content CSS */
-.main-content {
-  margin-top: 110px; /* adjust to match header height */
+  .technical-skill-group {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .job-topline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .job-dates {
+    white-space: normal;
+  }
+
+  .awards-list li {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .award-amount,
+  .award-desc {
+    grid-column: 2;
+  }
 }

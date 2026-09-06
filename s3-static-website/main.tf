@@ -40,17 +40,18 @@ resource "aws_cloudfront_distribution" "cf" {
   }
 
   default_cache_behavior {
-    allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
+    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD", "OPTIONS"]
     target_origin_id       = aws_s3_bucket.website.bucket_regional_domain_name
     viewer_protocol_policy = "redirect-to-https"
+    compress               = true
 
     forwarded_values {
       headers      = []
-      query_string = true
+      query_string = false
 
       cookies {
-        forward = "all"
+        forward = "none"
       }
     }
   }
@@ -64,7 +65,7 @@ resource "aws_cloudfront_distribution" "cf" {
   viewer_certificate {
     acm_certificate_arn      = aws_acm_certificate.cert.arn
     ssl_support_method       = "sni-only"
-    minimum_protocol_version = "TLSv1.2_2018"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
 
   tags = local.tags

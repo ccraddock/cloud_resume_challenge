@@ -5,8 +5,16 @@ export default defineConfig({
   plugins: [react()],
   root: './',
   server: {
+    host: '127.0.0.1',
     port: 3000,
-    open: true,
-    middlewareMode: false,
+    strictPort: true,
+    open: false,
+    fs: {
+      strict: true,
+    },
+  },
+  preview: {
+    host: '127.0.0.1',
+    strictPort: true,
   },
 });

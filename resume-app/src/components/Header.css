@@ -34,7 +34,7 @@
 
 .identity-name {
   color: #1d1d1d;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.55rem, 2.2vw, 2rem);
   line-height: 1;
   font-weight: 700;
@@ -43,6 +43,7 @@
 
 .identity-tagline {
   color: #6a655b;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   letter-spacing: 0.045em;
 }
@@ -55,6 +56,7 @@
 
 .select-label {
   color: #70695c;
+  font-family: var(--font-label);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -68,11 +70,118 @@
   border-radius: 4px;
   background: #fff;
   color: #272727;
+  font-family: var(--font-label);
   font-size: 0.88rem;
   cursor: pointer;
 }
 
+.font-menu {
+  position: relative;
+}
+
+.font-menu summary {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0 0.7rem;
+  border: 1px solid #cbc4b3;
+  border-radius: 4px;
+  background: #fff;
+  color: #34312b;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.font-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.font-menu summary::after {
+  content: "▾";
+  color: #8b826f;
+  font-size: 0.75rem;
+  transition: transform 0.15s ease;
+}
+
+.font-menu[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.font-menu-label {
+  color: #807868;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-menu-current {
+  font-weight: 650;
+}
+
+.font-menu-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 290px;
+  padding: 0.45rem;
+  border: 1px solid #d9d2c4;
+  background: #fffefb;
+  box-shadow: 0 14px 34px rgba(56, 48, 34, 0.14);
+  z-index: 150;
+}
+
+.font-option {
+  width: 100%;
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.62rem 0.7rem;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: #302e29;
+  text-align: left;
+  cursor: pointer;
+}
+
+.font-option:hover,
+.font-option.active {
+  background: #f3efe4;
+}
+
+.font-option.active::before {
+  content: "✓";
+  position: absolute;
+  transform: translateX(-0.05rem);
+  color: #9a7520;
+  font-weight: 800;
+}
+
+.font-option-name,
+.font-option-description {
+  margin-left: 1.1rem;
+}
+
+.font-option-name {
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.font-option-description {
+  color: #777064;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
 .header-actions select:focus-visible,
+.font-menu summary:focus-visible,
+.font-option:focus-visible,
 .pdf-link:focus-visible,
 .identity:focus-visible {
   outline: 3px solid rgba(184, 146, 46, 0.35);
@@ -89,6 +198,7 @@
   border-radius: 4px;
   background: #292929;
   color: #fff;
+  font-family: var(--font-label);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -100,7 +210,7 @@
   border-color: #b08b2f;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 900px) {
   .header-content {
     width: calc(100% - 2rem);
     min-height: auto;
@@ -112,16 +222,17 @@
 
   .header-actions {
     width: 100%;
+    flex-wrap: wrap;
   }
 
   .header-actions select {
-    flex: 1;
+    flex: 1 1 260px;
     max-width: none;
     min-width: 0;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .identity-tagline {
     font-size: 0.7rem;
   }
@@ -131,6 +242,22 @@
   }
 
   .header-actions select {
+    flex-basis: 100%;
     font-size: 0.82rem;
+  }
+
+  .font-menu {
+    flex: 1;
+  }
+
+  .font-menu summary {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .font-menu-panel {
+    left: 0;
+    right: auto;
+    width: min(310px, calc(100vw - 2rem));
   }
 }

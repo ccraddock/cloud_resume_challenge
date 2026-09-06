@@ -11,8 +11,8 @@ export default function Header({ pdf }) {
   return (
     <header className="header">
       <div className="header-content">
-        <a className="identity" href="#resume" aria-label="Cameron Craddock résumé">
-          <span className="identity-name">Cameron Craddock</span>
+        <a className="identity" href="#resume" aria-label="R. Cameron Craddock résumé">
+          <span className="identity-name">R. Cameron Craddock</span>
           <span className="identity-tagline">Machine Learning · Embedded AI · Systems Performance</span>
         </a>
 

@@ -1,4 +1,4 @@
-TF = docker-compose run --rm tf
+TF = docker compose run --rm tf
 
 build:
 	cd resume-app && npm install && npm run build

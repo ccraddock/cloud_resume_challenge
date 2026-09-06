@@ -27,7 +27,7 @@ function TechnicalSkillsSection({ technicalSkills }) {
 function JobSection({ jobs }) {
   return (
     <section>
-      <h2 className="section-header">Professional Experience</h2>
+      <h2 className="section-header">Professional Experience — Recent 10 Years of a 26-Year Career</h2>
       {jobs.map((job, idx) => (
         <div className="job-block" key={idx}>
           <div className="job-header">
@@ -164,3 +164,5 @@ export default function ResumeViewer({ url }) {
     </div>
   );
 }
+
+export default ResumeViewer;

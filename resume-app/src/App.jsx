@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import ResumeViewer from './components/ResumeViewer';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
+import ResumeViewer from './components/ResumeViewer';
 import Sidebar from './components/Sidebar';
 import './App.css';
 
@@ -15,23 +15,53 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(resumeFiles[selectedResume])
-      .then((r) => r.json())
-      .then((data) => setPdf(data.pdf || ''))
-      .catch(() => setPdf(''));
+    let active = true;
+
+    fetch(resumeFiles[selectedResume], { credentials: 'same-origin' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Unable to load resume metadata (${response.status})`);
+        return response.json();
+      })
+      .then((data) => {
+        if (active) setPdf(typeof data.pdf === 'string' ? data.pdf : '');
+      })
+      .catch(() => {
+        if (active) setPdf('');
+      });
+
+    return () => {
+      active = false;
+    };
   }, [selectedResume]);
+
+  const experienceHeading =
+    selectedResume === 'ml2026'
+      ? 'Professional Experience — Recent 10 Years of a 26-Year Career'
+      : 'Professional Experience';
 
   return (
     <div className="app">
-      <Header selectedResume={selectedResume} onResumeChange={setSelectedResume} pdf={pdf} />
-      <div className="container">
+      <Header
+        selectedResume={selectedResume}
+        onResumeChange={setSelectedResume}
+        pdf={pdf}
+      />
+
+      <div className="page-shell">
         <Sidebar />
-        <main className="main-content">
-          <ResumeViewer url={resumeFiles[selectedResume]} key={selectedResume} />
+        <main className="main-content" id="resume">
+          <ResumeViewer
+            url={resumeFiles[selectedResume]}
+            experienceHeading={experienceHeading}
+            key={selectedResume}
+          />
         </main>
       </div>
+
       <footer className="footer">
-        <p>&copy; 2026 Cameron Craddock | Resume powered by React</p>
+        <span>© 2026 Cameron Craddock</span>
+        <span className="footer-separator" aria-hidden="true">·</span>
+        <span>Austin, Texas</span>
       </footer>
     </div>
   );

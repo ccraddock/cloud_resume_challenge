@@ -1,7 +1,7 @@
 {
-  "title": "Staff Machine Learning Engineer",
+  "title": "Machine Learning Engineer",
   "pdf": "",
-  "summary": "Machine Learning Engineer tech lead with experience building, optimizing, and deploying production AI systems across machine learning, embedded systems, data science, and research.",
+  "summary": "Uber tech lead with experience building, optimizing, and deploying production AI systems across machine learning, embedded systems, data science, and research.",
   "technicalSkills": [
     {"category":"Machine Learning & AI","skills":"PyTorch, neural network training and inference, CNNs, LSTMs, Transformers, quantization, pruning, model compression, Neural Architecture Search (NAS), supervised/unsupervised learning, statistical modeling, data science, multivariate statistics"},
     {"category":"Edge AI & Embedded Systems","skills":"on-device machine learning, embedded systems, model deployment and optimization, power/latency/memory optimization, ARM Ethos-U55/U85 NPUs, NXP HiFi4 DSP, firmware integration, real-time systems, sensor fusion, digital signal processing, hardware/software co-design"},

@@ -136,6 +136,7 @@
 }
 
 .font-option {
+  position: relative;
   width: 100%;
   display: grid;
   gap: 0.12rem;
@@ -156,7 +157,8 @@
 .font-option.active::before {
   content: "✓";
   position: absolute;
-  transform: translateX(-0.05rem);
+  left: 0.7rem;
+  top: 0.68rem;
   color: #9a7520;
   font-weight: 800;
 }

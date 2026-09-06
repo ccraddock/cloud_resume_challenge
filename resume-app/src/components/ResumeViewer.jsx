@@ -177,7 +177,7 @@ export default function ResumeViewer({ url, experienceHeading = 'Professional Ex
     return (
       <div className="resume-container loading" role="status" aria-live="polite">
         <div className="loader" aria-hidden="true" />
-        <p>Loading résumé…</p>
+        <p>Loading resume…</p>
       </div>
     );
   }
@@ -185,8 +185,8 @@ export default function ResumeViewer({ url, experienceHeading = 'Professional Ex
   if (status === 'error') {
     return (
       <div className="resume-container error" role="alert">
-        <h2>Unable to load résumé</h2>
-        <p>The résumé data could not be loaded. Please refresh the page and try again.</p>
+        <h2>Unable to load resume</h2>
+        <p>The resume data could not be loaded. Please refresh the page and try again.</p>
         <button type="button" onClick={() => window.location.reload()}>Reload</button>
       </div>
     );
@@ -198,7 +198,7 @@ export default function ResumeViewer({ url, experienceHeading = 'Professional Ex
     <div className="resume-container ready">
       <article className="resume-content">
         <header className="resume-intro">
-          <p className="resume-eyebrow">Résumé</p>
+          <p className="resume-eyebrow">Resume</p>
           <h1 className="resume-title">{resume.title}</h1>
           {resume.summary && <p className="resume-summary">{resume.summary}</p>}
         </header>

@@ -5,15 +5,15 @@ import Sidebar from './components/Sidebar';
 import './App.css';
 
 function App() {
-  const [selectedResume, setSelectedResume] = useState('ml');
+  const [selectedResume, setSelectedResume] = useState('ml2026');
   const [pdf, setPdf] = useState('');
 
   const resumeFiles = {
+    ml2026: '/resumes/ml-resume-2026.json',
     ml: '/resumes/ml-resume.json',
     neuroscience: '/resumes/neuroscience-resume.json',
   };
 
-  // Fetch the PDF filename from the selected resume JSON
   useEffect(() => {
     fetch(resumeFiles[selectedResume])
       .then((r) => r.json())
@@ -31,7 +31,7 @@ function App() {
         </main>
       </div>
       <footer className="footer">
-        <p>&copy; 2025 Cameron Craddock | Resume powered by React</p>
+        <p>&copy; 2026 Cameron Craddock | Resume powered by React</p>
       </footer>
     </div>
   );

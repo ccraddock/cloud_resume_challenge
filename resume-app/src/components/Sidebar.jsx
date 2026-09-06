@@ -1,65 +1,49 @@
 import React from 'react';
 import './Sidebar.css';
 
+function ExternalLink({ href, children }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="sidebar-link">
+      {children}
+    </a>
+  );
+}
+
 function Sidebar() {
   return (
-    <aside className="sidebar">
+    <aside className="sidebar" aria-label="Contact and education">
       <section className="sidebar-section">
-        <h3>Links</h3>
-        <div className="links-grid">
-          <a href="mailto:cameron.craddock@gmail.com" className="sidebar-link">
-            📧 Email
-          </a>
-          <a
-            href="https://www.linkedin.com/in/cameron-craddock/"
-            target="_blank"
-            rel="noreferrer"
-            className="sidebar-link"
-          >
-            💼 LinkedIn
-          </a>
-          <a
-            href="https://github.com/ccraddock"
-            target="_blank"
-            rel="noreferrer"
-            className="sidebar-link"
-          >
-            🔗 GitHub
-          </a>
-          <a
-            href="https://scholar.google.com/citations?user=YOUR_ID"
-            target="_blank"
-            rel="noreferrer"
-            className="sidebar-link"
-          >
-            🎓 Google Scholar
-          </a>
+        <h2>Contact</h2>
+        <div className="contact-list">
+          <span>Austin, Texas</span>
+          <a href="tel:+14046254973">(404) 625-4973</a>
+          <a href="mailto:cameron.craddock@gmail.com">cameron.craddock@gmail.com</a>
         </div>
       </section>
 
       <section className="sidebar-section">
-        <h3>Quick Info</h3>
-        <p className="info-item">
-          <span className="label">Location:</span> Austin, TX
-        </p>
-        <p className="info-item">
-          <span className="label">Phone:</span> (404) 625-4973
-        </p>
+        <h2>Profiles</h2>
+        <nav className="profile-links" aria-label="Professional profiles">
+          <ExternalLink href="https://www.linkedin.com/in/cameron-craddock/">LinkedIn</ExternalLink>
+          <ExternalLink href="https://github.com/ccraddock">GitHub</ExternalLink>
+          <ExternalLink href="https://tinyurl.com/CameronCraddockCitations">Google Scholar</ExternalLink>
+        </nav>
       </section>
 
-      <section className="sidebar-section">
-        <h3>Education</h3>
+      <section className="sidebar-section education-section">
+        <h2>Education</h2>
         <div className="edu-item">
-          <h4>PhD Electrical & Computer Engineering</h4>
-          <p>Georgia Tech • 2009</p>
+          <h3>Georgia Institute of Technology</h3>
+          <p>PhD, Electrical &amp; Computer Engineering</p>
+          <span>2009</span>
         </div>
-        <div className="edu-item">
-          <h4>MS Electrical & Computer Engineering</h4>
-          <p>Georgia Tech • 2002</p>
+        <div className="edu-item compact">
+          <p>MS, Electrical &amp; Computer Engineering</p>
+          <span>2002</span>
         </div>
-        <div className="edu-item">
-          <h4>BS Computer Engineering</h4>
-          <p>Georgia Tech • 1999</p>
+        <div className="edu-item compact">
+          <p>BS, Computer Engineering</p>
+          <span>1999</span>
         </div>
       </section>
     </aside>

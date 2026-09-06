@@ -62,6 +62,7 @@ export default function Header({
                   role="menuitemradio"
                   aria-checked={fontTheme === option.id}
                   className={`font-option${fontTheme === option.id ? ' active' : ''}`}
+                  data-font-preview={option.id}
                   key={option.id}
                   onClick={() => selectFont(option.id)}
                 >

@@ -4,7 +4,7 @@
   "summary": "Uber technical lead with experience building, optimizing, and deploying production AI systems, with skills spanning machine learning, embedded systems, cloud and distributed infrastructure, data science, and research.",
   "technicalSkills": [
     {"category":"Machine Learning & AI","skills":"PyTorch, neural network training and inference, CNNs, LSTMs, Transformers, quantization, pruning, model compression, Neural Architecture Search (NAS), supervised/unsupervised learning, statistical modeling, data science"},
-    {"category":"Edge AI & Embedded Systems","skills":"model deployment and optimization, power/latency/memory optimization, ARM Ethos-U55/U85 NPUs, NXP HiFi4 DSP, sensor fusion, digital signal processing, hardware/software co-design"},
+    {"category":"Edge AI & Embedded Systems","skills":"model deployment and optimization, power/latency/memory optimization, ARM Ethos-U55/U85 NPUs, NXP HiFi4 DSP, sensor fusion, digital signal processing"},
     {"category":"Performance & Instrumentation","skills":"high-resolution power measurement, system performance modeling, NPU profiling, logic analyzers, hardware instrumentation, automated performance testing, benchmarking, A/B experimentation"},
     {"category":"Software & Infrastructure","skills":"Python, C/C++, MATLAB, R, Bash, Pandas, Linux, cloud/HPC computing, multi-GPU training, containers, CI/CD, version control, automated testing, AI-assisted software development, agentic engineering workflows"},
     {"category":"Domain Expertise","skills":"electromyography (EMG), wearable computing, biomedical signal processing, medical imaging (MRI, fMRI, PET)"}

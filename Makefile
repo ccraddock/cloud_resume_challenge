@@ -1,9 +1,10 @@
 TF = docker-compose run --rm tf
 
-deploy: apply
-	cd web-source && \
-		aws s3 sync ./ \
-		s3://cameroncraddock.net
+build:
+	cd resume-app && npm install && npm run build
+
+deploy: apply build
+	aws s3 sync resume-app/dist/ s3://cameroncraddock.net --delete
 
 apply: plan
 	$(TF) apply $(TF_WORKSPACE).tfplan

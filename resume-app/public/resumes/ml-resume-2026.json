@@ -1,6 +1,6 @@
 {
   "title": "Machine Learning Engineer",
-  "pdf": "",
+  "pdf": "/resumes/ccraddock_mle_2026.pdf",
   "summary": "Uber technical lead with experience building, optimizing, and deploying production AI systems, with skills spanning machine learning, embedded systems, cloud and distributed infrastructure, data science, and research.",
   "technicalSkills": [
     {"category":"Machine Learning & AI","skills":"PyTorch, neural network training and inference, CNNs, LSTMs, Transformers, quantization, pruning, model compression, Neural Architecture Search (NAS), supervised/unsupervised learning, statistical modeling, data science"},

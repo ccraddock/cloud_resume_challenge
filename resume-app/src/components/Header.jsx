@@ -15,7 +15,8 @@ export default function Header({ selectedResume, onResumeChange, pdf }) {
             value={selectedResume}
             onChange={e => onResumeChange(e.target.value)}
           >
-            <option value="ml">Machine Learning Engineer</option>
+            <option value="ml2026">Staff Machine Learning Engineer — 2026</option>
+            <option value="ml">Machine Learning Engineer — 2025</option>
             <option value="neuroscience">Biomedical Imaging AI Researcher</option>
           </select>
           {pdf && (

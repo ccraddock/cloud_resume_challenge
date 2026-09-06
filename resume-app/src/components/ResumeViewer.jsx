@@ -9,6 +9,21 @@ function formatDate(dateStr) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
 }
 
+function TechnicalSkillsSection({ technicalSkills }) {
+  return (
+    <section>
+      <h2 className="section-header">Technical Skills</h2>
+      <div className="technical-skills">
+        {technicalSkills.map((group, idx) => (
+          <p key={idx} className="technical-skill-group">
+            <strong>{group.category}:</strong> {group.skills}
+          </p>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function JobSection({ jobs }) {
   return (
     <section>
@@ -141,6 +156,7 @@ export default function ResumeViewer({ url }) {
       <article className="resume-content">
         <h1 className="resume-title">{resume.title}</h1>
         {resume.summary && <p className="resume-summary">{resume.summary}</p>}
+        {resume.technicalSkills && <TechnicalSkillsSection technicalSkills={resume.technicalSkills} />}
         {resume.jobs && <JobSection jobs={resume.jobs} />}
         {resume.openScienceProjects && <OpenScienceSection openScienceProjects={resume.openScienceProjects} />}
         {resume.grantsAwardsAndPublications && <GrantsAwardsSection grantsAwardsAndPublications={resume.grantsAwardsAndPublications} />}
